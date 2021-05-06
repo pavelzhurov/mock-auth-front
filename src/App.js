@@ -7,7 +7,7 @@ class App extends Component {
   state = { message: false }  
   componentDidMount() {
     var xhr = new XMLHttpRequest();
-    var api_endpoint = "http://api.example.com";
+    var api_endpoint = "https://api.example.com";
     xhr.open("GET", api_endpoint, true);
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.onload = function (e) {
