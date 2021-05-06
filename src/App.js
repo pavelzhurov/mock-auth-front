@@ -8,6 +8,7 @@ class App extends Component {
   componentDidMount() {
     var xhr = new XMLHttpRequest();
     var api_endpoint = process.env.API_ENDPOINT;
+    this.setStat({message: False});
     xhr.open("GET", api_endpoint, true);
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.onload = function (e) {
