@@ -3,12 +3,11 @@ import './App.css';
 import React from 'react';
 import { Component } from 'react'
 
-
 class App extends Component {
+  state = { message: false }  
   componentDidMount() {
     var xhr = new XMLHttpRequest();
-    var api_endpoint = process.env.API_ENDPOINT;
-    this.setStat({message: false});
+    var api_endpoint = "http://api.example.com";
     xhr.open("GET", api_endpoint, true);
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.onload = function (e) {
@@ -29,23 +28,24 @@ class App extends Component {
 
   render() {
     return (
-    <div className="App" >
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        {this.state.message ? this.state.message : "Couldn't obtain a message from backend"}
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
-  )}
+      <div className="App" >
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          {this.state.message ? this.state.message : "Couldn't obtain a message from backend"}
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+      </div>
+    )
+  }
 }
 
 export default App;
