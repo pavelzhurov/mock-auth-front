@@ -5,8 +5,6 @@ import { Component } from 'react'
 
 
 class App extends Component {
-  state = { keycloak: null, authenticated: false, message: null}
-
   componentDidMount() {
     var xhr = new XMLHttpRequest();
     var api_endpoint = process.env.API_ENDPOINT;
